@@ -1,0 +1,15 @@
+# Mi5hmasH's flavor
+AllowUsers deck
+Banner /etc/ssh/warning.net
+ClientAliveInterval 120
+ClientAliveCountMax 0
+PermitEmptyPasswords no
+PermitRootLogin no
+Port 2122
+PrintMotd yes
+Protocol 2
+# Default values
+AuthorizedKeysFile .ssh/authorized_keys
+KbdInteractiveAuthentication no
+Subsystem sftp /usr/lib/ssh/sftp-server
+UsePAM yes
