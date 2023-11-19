@@ -99,13 +99,29 @@ Now, when you enable the SSH service on your SteamDeck, you'll be able to access
 
 ### Preventing connection loss
 
-While working on battery, the device will suspend ongoing tasks after some time on idle. I know of two ways to prevent KDE Plasma from putting your device to sleep. The first one is to run the script from another script with the ***systemd-inhibit*** command. This will register a new lock for the time that script is running. You can examine the implementation of this method in the ***"Caffeine Launcher.sh"*** file. The downside of this method is that the device screen stays on all the time, so I went another way. I've modified power management settings in the ***"/home/deck/.config/powermanagementprofilesrc"*** file. 
+While working on battery, the device will suspend ongoing tasks after some time on idle. I know of two ways to prevent KDE Plasma from putting your device to sleep. The first one is to run the script from another script with the ***systemd-inhibit*** command. This will register a new lock for the time that script is running. You can examine the implementation of this method in the ***"_Caffeine Launcher.sh"*** file. The downside of this method is that the device screen stays on all the time, so I went another way. I've modified power management settings in the ***"/home/deck/.config/powermanagementprofilesrc"*** file. 
 
 By default, the script backups current power management settings and overwrites the original with the modified one. Then it refreshes the **org.kde.Solid.PowerManagement** config status. In this state, the device will first dim the screen and then turn it off, but won't suspend anything. This is pretty cool, right? After you chose to disable SSH it will restore the previous settings.
 
 If you don't want this feature then you can disable it by changing the value of **"DISABLE_SUSPENSION"** flag to **"0"** in the ***"settings.json"*** file.
 
-# :runner: Running the script
+# 🧑‍🔧 Installing the script
+There are two ways to install this tool: Automatic or Manual [PRO].
+
+### A) Automatic installation
+Automatic installation script will download and install the latest version of this tool in the ***'DOCUMENTS'*** directory and create a shortcut on ***'DESKTOP'***.
+
+In order to install this way, open a new Konsole window and paste one of the following lines of code depending on what you want to do:
+#### Install
+```bash
+curl -sSL https://raw.githubusercontent.com/mi5hmash/SteamDeckSSH/main/_Installer.sh | bash
+```
+
+#### Uninstall
+```bash
+curl -sSL https://raw.githubusercontent.com/mi5hmash/SteamDeckSSH/main/_Installer.sh | bash -s -- -u
+```
+### B) Manual installation
 Grab the [latest release](https://github.com/mi5hmash/SteamDeckSSH/releases/latest) and unpack it on your Steam Deck.
 Then right-click on the ***'_Create a Shortcut on Desktop.sh'*** and select *"Properties"*. Navigate to the "Permissions" tab and make sure that an "Is executable" checkbox is ticked.
 
@@ -119,6 +135,10 @@ You can also click twice and execute that script.
 A desktop shortcut will be created.
 
 <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/desktop_icon.png" alt="desktop_icon" width="280"/>
+
+# :runner: Running the script
+
+Regardless of which installation method you choose, you should end up with a shortcut on your desktop. Run the script with it.
 
 **Do not attempt to execute 'SteamDeckSSH.sh' by clicking twice on it, because this will run the script in a hidden window.**
 
