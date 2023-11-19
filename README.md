@@ -137,7 +137,6 @@ A desktop shortcut will be created.
 <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/desktop_icon.png" alt="desktop_icon" width="280"/>
 
 # :runner: Running the script
-
 Regardless of which installation method you choose, you should end up with a shortcut on your desktop. Run the script with it.
 
 **Do not attempt to execute 'SteamDeckSSH.sh' by clicking twice on it, because this will run the script in a hidden window.**
