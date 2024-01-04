@@ -93,7 +93,8 @@ During the process, it will ask you where to save the keys and if you would like
 
 A final step is to copy the content of ***id_rsa.pub*** inside ***./data/authorized_keys*** on your SteamDeck.
 
-> **Note:** You can add more than one key. Just paste every next key in the new line.
+> [!TIP]
+> You can add more than one key. Just paste every next key in the new line.
 
 Now, when you enable the SSH service on your SteamDeck, you'll be able to access it only from the device that has a matching private key.
 
