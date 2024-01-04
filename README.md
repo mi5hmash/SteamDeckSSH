@@ -1,6 +1,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blueviolet.svg)](https://opensource.org/licenses/MIT)
-[![Release Version](https://img.shields.io/github/v/tag/mi5hmash/SteamDeckSSH?label=version)](https://github.com/mi5hmash/SteamDeckSSH/releases/latest)
-[![Visual Studio Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
+[![Release Version](https://img.shields.io/github/v/tag/mi5hmash/SteamDeckSSH?label=Tool%20Version)](https://github.com/mi5hmash/SteamDeckSSH/releases/latest)
+[![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-27313C.svg?logo=visual-studio-code)](https://code.visualstudio.com/)
+
+> [!IMPORTANT]
+> **Scripts from this repo are free and open source. If someone asks you to pay for them, it's likely a scam.**
 
 # :interrobang: SteamDeckSSH - What is it?
 <p float="left">
@@ -8,7 +11,7 @@
   <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/iconart.png" alt="icon" width="256" />
 </p>
 
-It's a shell script for lazy people like me who want to use SSH on their decks, but don't want to type many commands into a command line. If you're one of us, then worry no more as I got you covered.
+It's a shell script for lazy people like me who want to use SSH on their decks, but don't want to type many commands into a command line. If you're one of us, worry no more as I got you covered.
 
 **Despite that it's simple, you're still <mark>using it at your own risk</mark>. I've tried my best to make it foolproof and I always run tests before release until I consider my tool stable, but some things may show up only after a long time of use. You've been warned.**
 # :tipping_hand_person: How does it work?
@@ -20,15 +23,15 @@ If you don't have a password set then the script will set the default password, 
 
 Unless you're using your password, it will be removed as soon as it's no longer needed and it depends on the scenario you pick. When you are using password authentication the password is needed for as long as the SSH server is enabled. In the case of key authentication, the password is needed only to enable or disable the server, but not between those steps. 
 
-No matter which scenario you chose, the current SSH config will be backed up and then the script will insert a temporary configuration prepared by me.
+No matter which scenario you choose, the current SSH config will be backed up and then the script will insert a temporary configuration prepared by me.
 
 When the service is enabled, you will see a window with a local IP address of your SteamDeck and Port. You can use it in Terminal, WinSCP, or any other client to make a connection.
 
 <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/ssh_enabled.png" alt="ssh_enabled" width="350" />
 
-After you're done using the server, you can disable the SSH service. Backed up SSH config will get restored and the script will clean up after itself.
+After you're done using the server, you can disable the SSH service. The backed-up SSH config will get restored and the script will clean up after itself.
 
-In short, that's all. It's simple as that.
+In short, that's all. It's as simple as that.
 
 If you do not want to use the key authentication or know more details then skip the next chapter.
 
@@ -75,11 +78,11 @@ I did some research and prepared two configurations that I consider reasonable:
 
 Notice that I've changed the default port from '22' to '2122', but you can pick any other unoccupied number to make it even less obvious.
 
-### Setting-up a key authentication
+### Setting up a key authentication
 
 To use the key authentication, change the value of **"KEY_AUTH"** flag to **"1"** in the ***"settings.json"*** file.
 
-Next, you need to generate ssh keys on the client device from which you want to access the ssh server on SteamDeck.
+Next, you need to generate SSH keys on the client device from which you want to access the SSH server on SteamDeck.
 
 I use the following console command:  
 ```markdown
@@ -93,15 +96,16 @@ During the process, it will ask you where to save the keys and if you would like
 
 A final step is to copy the content of ***id_rsa.pub*** inside ***./data/authorized_keys*** on your SteamDeck.
 
-> **Note:** You can add more than one key. Just paste every next key in the new line.
+> [!TIP]
+> You can add more than one key. Just paste every next key in the new line.
 
 Now, when you enable the SSH service on your SteamDeck, you'll be able to access it only from the device that has a matching private key.
 
 ### Preventing connection loss
 
-While working on battery, the device will suspend ongoing tasks after some time on idle. I know of two ways to prevent KDE Plasma from putting your device to sleep. The first one is to run the script from another script with the ***systemd-inhibit*** command. This will register a new lock for the time that script is running. You can examine the implementation of this method in the ***"_Caffeine Launcher.sh"*** file. The downside of this method is that the device screen stays on all the time, so I went another way. I've modified power management settings in the ***"/home/deck/.config/powermanagementprofilesrc"*** file. 
+While working on the battery, the device will suspend ongoing tasks after some time on idle. I know of two ways to prevent KDE Plasma from putting your device to sleep. The first one is to run the script from another script with the ***systemd-inhibit*** command. This will register a new lock for the time that the script is running. You can examine the implementation of this method in the ***"_Caffeine Launcher.sh"*** file. The downside of this method is that the device screen stays on all the time, so I went another way. I've modified power management settings in the ***"/home/deck/.config/powermanagementprofilesrc"*** file. 
 
-By default, the script backups current power management settings and overwrites the original with the modified one. Then it refreshes the **org.kde.Solid.PowerManagement** config status. In this state, the device will first dim the screen and then turn it off, but won't suspend anything. This is pretty cool, right? After you chose to disable SSH it will restore the previous settings.
+By default, the script backups current power management settings and overwrites the original with the modified one. Then it refreshes the **org.kde.Solid.PowerManagement** config status. In this state, the device will first dim the screen and then turn it off, but won't suspend anything. This is pretty cool, right? After you choose to disable SSH it will restore the previous settings.
 
 If you don't want this feature then you can disable it by changing the value of **"DISABLE_SUSPENSION"** flag to **"0"** in the ***"settings.json"*** file.
 
@@ -109,9 +113,9 @@ If you don't want this feature then you can disable it by changing the value of 
 There are two ways to install this tool: Automatic or Manual [PRO].
 
 ### A) Automatic installation
-Automatic installation script will download and install the latest version of this tool in the ***'DOCUMENTS'*** directory and create a shortcut on ***'DESKTOP'***.
+The automatic installation script will download and install the latest version of this tool in the ***'DOCUMENTS'*** directory and create a shortcut on ***'DESKTOP'***.
 
-In order to install this way, open a new Konsole window and paste one of the following lines of code depending on what you want to do:
+To install this way, open a new Konsole window and paste one of the following lines of code depending on what you want to do:
 #### Install
 ```bash
 curl -sSL https://raw.githubusercontent.com/mi5hmash/SteamDeckSSH/main/_Installer.sh | bash
