@@ -2,6 +2,9 @@
 [![Release Version](https://img.shields.io/github/v/tag/mi5hmash/SteamDeckSSH?label=version)](https://github.com/mi5hmash/SteamDeckSSH/releases/latest)
 [![Visual Studio Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
+> [!IMPORTANT]
+> **These scripts are free and open source. If someone asks you to pay for them, then it's likely a scam.**
+
 # :interrobang: SteamDeckSSH - What is it?
 <p float="left">
   <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/cover.png" alt="cover" width="460" />
