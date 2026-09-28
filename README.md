@@ -7,8 +7,8 @@
 
 # :interrobang: SteamDeckSSH - What is it?
 <p float="left">
-  <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/cover.png" alt="cover" width="460" />
-  <img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/iconart.png" alt="icon" width="256" />
+  <img src=".resources/images/cover.png" alt="cover" width="460" />
+  <img src=".resources/images/iconart.png" alt="icon" width="256" />
 </p>
 
 It's a shell script for lazy people like me who want to use SSH on their decks, but don't want to type many commands into a command line. If you're one of us, worry no more as I got you covered.
@@ -27,7 +27,7 @@ No matter which scenario you choose, the current SSH config will be backed up an
 
 When the service is enabled, you will see a window with a local IP address of your SteamDeck and Port. You can use it in Terminal, WinSCP, or any other client to make a connection.
 
-<img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/ssh_enabled.png" alt="ssh_enabled" width="350" />
+<img src=".resources/images/ssh_enabled.png" alt="ssh_enabled" width="350" />
 
 After you're done using the server, you can disable the SSH service. The backed-up SSH config will get restored and the script will clean up after itself.
 
@@ -129,16 +129,16 @@ curl -sSL https://raw.githubusercontent.com/mi5hmash/SteamDeckSSH/main/_Installe
 Grab the [latest release](https://github.com/mi5hmash/SteamDeckSSH/releases/latest) and unpack it on your Steam Deck.
 Then right-click on the ***'_Create a Shortcut on Desktop.sh'*** and select *"Properties"*. Navigate to the "Permissions" tab and make sure that an "Is executable" checkbox is ticked.
 
-<img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/permissions.png" alt="permissions" width="415"/>
+<img src=".resources/images/permissions.png" alt="permissions" width="415"/>
 
 Then click **OK** and once again right-click on the ***'_Create a Shortcut on Desktop'***, but this time select *"Run in Konsole"*.
 You can also click twice and execute that script. 
 
-<img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/run.png" alt="run" width="415"/>
+<img src=".resources/images/run.png" alt="run" width="415"/>
 
 A desktop shortcut will be created.
 
-<img src="https://github.com/mi5hmash/SteamDeckSSH/blob/main/.resources/images/desktop_icon.png" alt="desktop_icon" width="280"/>
+<img src=".resources/images/desktop_icon.png" alt="desktop_icon" width="280"/>
 
 # :runner: Running the script
 Regardless of which installation method you choose, you should end up with a shortcut on your desktop. Run the script with it.
